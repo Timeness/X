@@ -174,10 +174,14 @@
       }
     });
 
-    window.addEventListener('popstate', function(event) {
-      event.preventDefault();
+    // Back button functionality
+    const backButton = document.createElement('button');
+    backButton.innerHTML = 'Back';
+    backButton.classList.add('fixed', 'top-4', 'left-4', 'bg-gray-700', 'text-white', 'p-2', 'rounded-lg');
+    document.body.appendChild(backButton);
+
+    backButton.addEventListener('click', function() {
       exitDialog.classList.remove('hidden');
-      window.history.pushState(null, null, window.location.href);
     });
 
     exitYesButton.addEventListener('click', function() {
@@ -189,4 +193,4 @@
     });
   </script>
 </body>
-  </html>
+</html>
